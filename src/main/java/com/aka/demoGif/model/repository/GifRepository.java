@@ -3,6 +3,7 @@ package com.aka.demoGif.model.repository;
 import com.aka.demoGif.model.Gif;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,11 +22,17 @@ public class GifRepository {
     public String getGifNames(){
 
         String names = "";
+
         for (Gif g : ALL_GIFS){
 
             names += g.getName();
         }
 
         return names;
+    }
+
+    public List<Gif> getGifs(){
+
+        return ALL_GIFS;
     }
 }
