@@ -1,10 +1,12 @@
 package com.aka.demoGif.model.repository;
 
 import com.aka.demoGif.model.Gif;
+import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Repository
 public class GifRepository {
 
     private static List<Gif> ALL_GIFS = Arrays.asList(
@@ -16,5 +18,14 @@ public class GifRepository {
             new Gif("infinite-andrew", "andrew", true)
     );
 
+    public String getGifNames(){
 
+        String names = "";
+        for (Gif g : ALL_GIFS){
+
+            names += g.getName();
+        }
+
+        return names;
+    }
 }
