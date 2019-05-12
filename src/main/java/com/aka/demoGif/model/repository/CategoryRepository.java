@@ -19,5 +19,8 @@ public class CategoryRepository {
         return ALL_CATEGORIES;
     }
 
-    ;
+
+    public Category getCategoryById(int id) {
+        return ALL_CATEGORIES.get(id);
+    }
 }

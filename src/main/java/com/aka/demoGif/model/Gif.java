@@ -5,11 +5,13 @@ public class Gif {
     private String name;
     private String username;
     private Boolean favorite;
+    private int categoryId;
 
-    public Gif(String name, String userName, Boolean favorite) {
+    public Gif(String name, String username, Boolean favorite, int categoryId) {
         this.name = name;
-        this.username = userName;
+        this.username = username;
         this.favorite = favorite;
+        this.categoryId = categoryId;
     }
 
     public String getName() {
@@ -28,11 +30,19 @@ public class Gif {
         this.username = username;
     }
 
-    public boolean isFavorite() {
+    public Boolean getFavorite() {
         return favorite;
     }
 
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 }
