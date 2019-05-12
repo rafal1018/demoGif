@@ -39,6 +39,7 @@ public class GifController {
 
     @RequestMapping("/favorites")
     public String gifFavourites(ModelMap modelMap){
+
         // Wedługschematu:
         // Analogicznie: 1. Pobieramy listę gifów (tylko ulubionych)
         List<Gif> favoriteGifs = gifRepository.getFavoriteGifs();
@@ -49,8 +50,6 @@ public class GifController {
         // Informacja: widok nazywa się favourite.html
 
         return "favorites";
-
-
     }
 
 }
