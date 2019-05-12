@@ -65,4 +65,15 @@ public class GifRepository {
 
         return listByCategoryId;
     }
+
+
+    public Gif getGifByName(String name) {
+
+        for (Gif g : ALL_GIFS){
+            if (name.equals(g.getName()))
+                return g;
+        }
+
+        return null;
+    }
 }

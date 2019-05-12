@@ -5,6 +5,7 @@ import com.aka.demoGif.model.repository.GifRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,7 +41,7 @@ public class GifController {
     @RequestMapping("/favorites")
     public String gifFavourites(ModelMap modelMap){
 
-        // Wedługschematu:
+        // Według schematu:
         // Analogicznie: 1. Pobieramy listę gifów (tylko ulubionych)
         List<Gif> favoriteGifs = gifRepository.getFavoriteGifs();
 
@@ -51,5 +52,16 @@ public class GifController {
 
         return "favorites";
     }
+
+    @RequestMapping("/gif/{name}")
+    public String gifRepository(@PathVariable String name, ModelMap modelMap){
+
+        Gif gif = gifRepository.getGifByName(name);
+
+        modelMap.put("gif", gif);
+
+        return "gif-details";
+    }
+
 
 }
